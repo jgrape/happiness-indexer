@@ -1,0 +1,9 @@
+@(team: Team)
+
+@page("Happiness Indexer: Team " + team.getName) {
+  @team.getTeamMembers.map { member =>
+    <p>
+      <a href="@routes.Votes.voteForm(member.getId)">@member.name()</a>
+    </p>
+  }
+}

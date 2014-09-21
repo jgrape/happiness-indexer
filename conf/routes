@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET        /                         controllers.Application.index()
+
+GET        /team/:teamId             controllers.Teams.show(teamId: Long)
+
+GET        /vote/form/:userId        controllers.Votes.voteForm(userId: Long)
+GET        /vote/vote/:userId        controllers.Votes.vote(userId: Long, happiness: Integer)
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file             controllers.Assets.at(path="/public", file)
+GET        /webjars/*file            controllers.WebJarAssets.at(file)

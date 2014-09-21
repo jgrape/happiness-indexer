@@ -1,0 +1,17 @@
+@(teamMember: TeamMember)
+@import java.time.LocalDate
+
+@page(teamMember.name + " vote for today " + LocalDate.now()) {
+
+  <p>
+  @teamMember.getFirstName, hur känns det att komma till jobbet idag?
+  </p>
+  <ol>
+    <li><a href="@routes.Votes.vote(teamMember.getId, 1)">Uschligt</a></li>
+    <li><a href="@routes.Votes.vote(teamMember.getId, 2)">Naje</a></li>
+    <li><a href="@routes.Votes.vote(teamMember.getId, 3)">Ok</a></li>
+    <li><a href="@routes.Votes.vote(teamMember.getId, 4)">Kul</a></li>
+    <li><a href="@routes.Votes.vote(teamMember.getId, 5)">Fantastiskt!</a></li>
+  </ol>
+
+}

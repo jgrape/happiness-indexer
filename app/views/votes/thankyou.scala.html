@@ -1,0 +1,10 @@
+@(teamMember: TeamMember)
+@import java.time.LocalDate
+
+@page(teamMember.name + " vote for today " + LocalDate.now()) {
+
+  <p>
+    Tack för din röst @teamMember.getFirstName!!
+  </p>
+  <a href="@routes.Teams.show(teamMember.getTeam.getId)">Tillbaka till @teamMember.getTeam.getName</a>
+}

@@ -1,0 +1,9 @@
+@(message: String, t: Option[Throwable])
+
+@page("Happiness Indexer: Error") {
+  <p>Something went wrong!</p>
+  <p>@message</p>
+  @if(t.isDefined && t.get.getMessage != null) {
+    <p>@t.get.getMessage</p>
+  }
+}

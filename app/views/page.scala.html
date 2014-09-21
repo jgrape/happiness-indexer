@@ -1,0 +1,21 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@title</title>
+    <link rel='shortcut icon' type='image/png' href='@routes.Assets.at("images/favicon.png")'>
+    <link rel='stylesheet' href='@routes.WebJarAssets.at(WebJarAssets.locate("bootstrap.min.css"))'>
+    <script type='text/javascript' src='@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))'></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Happiness Indexer</h1>
+        <p>Tell how you feel about coming to work</p>
+      </div>
+      @content
+    </div>
+  </body>
+</html>
