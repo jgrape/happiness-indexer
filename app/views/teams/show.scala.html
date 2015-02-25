@@ -1,9 +1,9 @@
-@(team: Team)
+@(team: models.Team)
 
-@page("Happiness Indexer: Team " + team.getName) {
-  @team.getTeamMembers.map { member =>
+@page("Happiness Indexer: Team " + team.name) {
+  @team.teamMembers.map { member =>
     <p>
-      <a href="@routes.Votes.voteForm(member.getId)">@member.name()</a>
+      <a href="@routes.Votes.voteForm(member.id)">@member.name</a>
     </p>
   }
 }

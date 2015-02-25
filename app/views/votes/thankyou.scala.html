@@ -1,10 +1,10 @@
-@(teamMember: TeamMember)
+@(teamMember: models.TeamMember)
 @import java.time.LocalDate
 
-@page(teamMember.name + " vote for today " + LocalDate.now()) {
+@page(teamMember.name + " vote for today " + LocalDate.now) {
 
   <p>
-    Tack för din röst @teamMember.getFirstName!!
+    Tack för din röst @teamMember.firstName!!
   </p>
-  <a href="@routes.Teams.show(teamMember.getTeam.getId)">Tillbaka till @teamMember.getTeam.getName</a>
+  <a href="@routes.Teams.show(teamMember.team.id)">Tillbaka till @teamMember.team.name</a>
 }

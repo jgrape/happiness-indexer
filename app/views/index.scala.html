@@ -1,9 +1,10 @@
-@(teams: List[Team])
+@(teams: List[models.Team])
+
 
 @page("Happiness Indexer") {
   @teams.map { team =>
     <p>
-      <a href="@routes.Teams.show(team.getId())">@team.getName</a>
+      <a href="@routes.Teams.show(team.id)">@team.name</a>
     </p>
   }
 }

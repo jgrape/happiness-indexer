@@ -1,7 +1,5 @@
 package models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Value;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -10,25 +8,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@EqualsAndHashCode(callSuper = false)
-@Value
 @Entity
 public class TeamMember extends Model {
   public static Finder<Long, TeamMember> find = new Finder<>(Long.class, TeamMember.class);
 
   @Id
   @GeneratedValue
-  Long id;
+  public Long id;
 
   @Constraints.Required
-  String firstName;
+  public String firstName;
 
   @Constraints.Required
-  String lastName;
+  public String lastName;
 
   @Constraints.Required
   @ManyToOne
-  Team team;
+  public Team team;
 
   public String name() {
     return firstName + " " + lastName;

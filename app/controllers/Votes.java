@@ -29,7 +29,7 @@ public class Votes extends Controller {
     List<Vote> oldVotes = Vote.find.where().eq("team_member_id", memberId).eq("day", today).findList();
     oldVotes.stream().forEach(Vote::delete);
 
-    Vote newVote = new Vote(null, teamMember, today, happiness);
+    Vote newVote = new Vote(teamMember, today, happiness);
     newVote.save();
 
     return ok(views.html.votes.thankyou.render(teamMember));

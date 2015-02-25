@@ -1,7 +1,5 @@
 package models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Value;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 
@@ -14,20 +12,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import java.util.List;
 
-@EqualsAndHashCode(callSuper = false)
-@Value
 @Entity
 public class Team extends Model {
   public static Finder<Long, Team> find = new Finder<>(Long.class, Team.class);
 
   @Id
   @GeneratedValue
-  Long id;
+  public Long id;
 
   @Constraints.Required
-  String name;
+  public String name;
 
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
   @OrderBy("firstName, lastName")
-  List<TeamMember> teamMembers;
+  public List<TeamMember> teamMembers;
 }
