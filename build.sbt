@@ -27,7 +27,7 @@ lazy val root = (project in file("."))
 
 initialize := {
   val _ = initialize.value
-//  if (sys.props("java.specification.version") != "1.8")
-//    sys.error("Java 8 is required for this project.")
+  if (sys.props("java.specification.version") != "1.8")
+    sys.error("Java 8 is required for this project. Found " + sys.props("java.specification.version"))
 }
 
